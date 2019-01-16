@@ -2,3 +2,4 @@
 """
 @ Created by Seven on  2019/01/16 <https://www.soo9s.com>
 """
+from .user import db, User
