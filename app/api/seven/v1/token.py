@@ -20,7 +20,6 @@ api = Redprint('token')
 def get_token():
     """
     登录
-    :return:
     ---
     tags:
       - 用户模块
@@ -70,11 +69,6 @@ def generate_auth_token(uid, ac_type, scope=None,
                         expiration=7200):
     """
     生成token的方法
-    :param uid:
-    :param ac_type:
-    :param scope:
-    :param expiration:
-    :return:
     """
     s = Serializer(current_app.config['SECRET_KEY'], expires_in=expiration)
     return s.dumps({
