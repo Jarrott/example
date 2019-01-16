@@ -3,7 +3,7 @@
 @ Created by Seven on  2019/01/16 <https://www.soo9s.com>
 """
 from flask import Blueprint
-from app.api.seven.v1 import ()
+from app.api.seven.v1 import (token)
 
 
 def create_blueprint():
@@ -13,5 +13,5 @@ def create_blueprint():
     :return: 视图路由
     """
     bp_v1 = Blueprint('seven_v1', __name__)
-    # home.api.register(bp_v1)
+    token.api.register(bp_v1)
     return bp_v1
