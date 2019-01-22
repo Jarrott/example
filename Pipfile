@@ -1,0 +1,15 @@
+[[source]]
+url = "https://pypi.douban.com/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+simple-g = "*"
+flask-cors = "*"
+flasgger = "*"
+cymysql = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.7"

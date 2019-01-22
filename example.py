@@ -1,36 +1,10 @@
 # -*- encoding:utf-8 -*-
 """
-@ Created by Seven on  2019/01/16 <https://www.soo9s.com>
+@ Created by Seven on  2019/01/21 <https://www.soo9s.com>
 """
-from werkzeug.exceptions import HTTPException
-
-from app import create_app
-from app.libs.error import JsonTypeException
-from app.libs.error_code import ServerError
+from app.app import create_app
 
 app = create_app()
 
-
-@app.errorhandler(Exception)
-def framework_error(err):
-    """
-    全局异常处理
-    :param err:
-    :return:
-    """
-    if isinstance(err, JsonTypeException):
-        return err
-    if isinstance(err, HTTPException):
-        code = err.code
-        message = err.description
-        error_code = 10015
-        return JsonTypeException(code, message, error_code)
-    else:
-        if not app.config["DEBUG"]:
-            return ServerError()
-        else:
-            raise err
-
-
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port='5000')
+    app.run(debug=True)
